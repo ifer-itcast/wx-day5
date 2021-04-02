@@ -1,1 +1,6 @@
 /* pages/message/message.wxss */
+.line{
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  border-bottom: 1px solid red;
+}
