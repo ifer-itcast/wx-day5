@@ -3,6 +3,7 @@ import { action, observable } from 'mobx-miniprogram'
 export const store = observable({
   numA: 1,
   numB: 2,
+  activeTabBarIndex: 0,
   get sum() {
     return this.numA + this.numB
   },
@@ -12,5 +13,8 @@ export const store = observable({
   }),
   updateNum2: action(function(step) {
     this.numB += step
+  }),
+  updateActiveTabBarIndex: action(function(index) {
+    this.activeTabBarIndex = index
   })
 })
