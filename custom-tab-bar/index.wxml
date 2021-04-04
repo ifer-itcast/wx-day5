@@ -1,20 +1,17 @@
 <van-tabbar active="{{ active }}" bind:change="onChange">
-  <van-tabbar-item>
+  <van-tabbar-item wx:for="{{list}}" wx:key="index">
     <image
       slot="icon"
-      src="/images/tabs/home.png"
+      src="{{item.iconPath}}"
       mode="aspectFit"
-      style="width: 30px; height: 18px;"
+      style="width: 25px; height: 25px;"
     />
     <image
       slot="icon-active"
-      src="/images/tabs/home-active.png"
+      src="{{item.selectedIconPath}}"
       mode="aspectFit"
-      style="width: 30px; height: 18px;"
+      style="width: 25px; height: 25px;"
     />
-    首页
+    {{item.text}}
   </van-tabbar-item>
-  <van-tabbar-item icon="search">标签</van-tabbar-item>
-  <van-tabbar-item icon="friends-o">标签</van-tabbar-item>
-  <van-tabbar-item icon="setting-o">标签</van-tabbar-item>
 </van-tabbar>
