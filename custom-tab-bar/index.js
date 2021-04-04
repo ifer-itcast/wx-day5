@@ -1,7 +1,24 @@
-// custom-tab-bar/index.js
+import { storeBindingsBehavior } from 'mobx-miniprogram-bindings'
+import { store } from '../store/store'
 Component({
   options: {
     styleIsolation: "shared"
+  },
+  behaviors: [storeBindingsBehavior],
+  storeBindings: {
+    store,
+    fields: {
+      sum: 'sum'
+    },
+    actions: {
+    },
+  },
+  observers: {
+    'sum': function(val) {
+      this.setData({
+        'list[1].info': val
+      })
+    }
   },
   /**
    * 组件的属性列表
