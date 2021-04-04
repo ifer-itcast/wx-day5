@@ -26,7 +26,6 @@ Component({
   properties: {
 
   },
-
   /**
    * 组件的初始数据
    */
@@ -66,5 +65,14 @@ Component({
         url: this.data.list[event.detail].pagePath,
       })
     },
+    // #1
+    // #2 每个 TabBar 对应的页面 onShow 的时候都要 this.getTabBar().init()，不然会有问题
+    // https://vant-contrib.gitee.io/vant-weapp/#/tabbar
+    init() {
+      const page = getCurrentPages().pop();
+			this.setData({
+				active: this.data.list.findIndex(item => item.pagePath === `/${page.route}`)
+			});
+		}
   }
 })
