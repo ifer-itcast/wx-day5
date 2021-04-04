@@ -30,7 +30,9 @@
   ],
   "usingComponents": {
     "van-button": "@vant/weapp/button/index",
-    "my-numbers": "./components/numbers/numbers"
+    "my-numbers": "./components/numbers/numbers",
+    "van-tabbar": "@vant/weapp/tabbar/index",
+    "van-tabbar-item": "@vant/weapp/tabbar-item/index"
   },
   "window": {
     "backgroundTextStyle": "light",
@@ -39,6 +41,7 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
+    "custom": true,
     "list": [
       {
         "pagePath": "pages/home/home",
